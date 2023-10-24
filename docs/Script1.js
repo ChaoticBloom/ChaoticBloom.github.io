@@ -1,4 +1,3 @@
-// JavaScript source code blah blah blah
 var savegame = JSON.parse(localStorage.getItem("goldMinerSave"))
 if (savegame !== null) {
     gameData = savegame
@@ -174,17 +173,4 @@ var mainGameLoop = window.setInterval(function () {
         absorbSun()
         absorbWater()
 }, 100)
-
-/*
-var saveGameLoop = window.setInterval(function () {
-    localStorage.setItem("worldTreeSave", JSON.stringify(gameData))
-}, 15000)
-savegame = JSON.parse(localStorage.getItem("worldTreeSave"))
-}
-
-if (typeof savegame !== undefined) {
-gameData = savegame
-                
-}
-*/
 
