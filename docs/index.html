@@ -1,11 +1,62 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    <script src="Script1.js" charset="utf-8" type="text/javascript"></script>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Idle World Tree</title>
+    <style>
+        .b{ }
+        .screencolor {
+            background-color: black;
+            color:white;
+        }
+        .tabs button:hover {
+            color: white;
+            background: grey;
+        }
+        .tabs button:active {
+            background: silver;
+        }
+        .tabs { /* make this button specific */
+            width: 25%;
+            height: 50px;
+            font-size: medium;
+        }
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid silver;
+            border-top: none;
+        }
+        .xButton {
+            float: right;
+            cursor: pointer;
+            font-size: 28px;
+            font-weight: 900;
+            vertical-align: top;
+        }
+        .xButton:hover {color: red;}
+    </style>
 </head>
 <body>
-    <p id="title">Idle World Tree </p>
+    <div style="width:99%;height:100px;margin:auto;font-size:0">
+        <p id="title" style="text-align:center;font-size:xx-large;margin-bottom:5px;margin-top:5px">Idle World Tree </p>
+        <br />
+        <button id="challengeTab" onclick="changeTab(0)" class="tabs tablinks">Challenges (Coming Soon)</button>
+        <button id="researchTab" onclick="changeTab(0)" class="tabs tablinks">Research (Coming Soon)</button>
+        <button id="upgradeTab" onclick="changeTab(0)" class="tabs tablinks">Ascension (Coming Soon)</button>
+        <button id="optionsTab" onclick="changeTab(event,'Options')" class="tablinks tabs">Options </button>
+    </div>
+    <div id="Options" class="tabcontent">
+        <span style="vertical-align:top" onclick="this.parentElement.style.display='none'" class="xButton">&times</span>
+        <h3>Options</h3>
+        <button id="darkMode" onclick="darkMode()">Activate Dark Mode</button>
+        <button id="lightMode" onclick="lightMode()">Activate Light Mode</button>
+        <button id="sciYesMode" onclick="sciNot(1)">Activate Scientific Notation Mode</button>
+        <button id="sciNoMode" onclick="sciNot(0)">Deactivate Scientific Notation Mode</button>
+    </div>
+    <br />
     <p id="Water">0 Water Collected</p>
     <p id="Nutrients">0 Nutrients Collected</p>
     <p id="Energy">0 Energy Collected</p>
@@ -20,6 +71,6 @@
     <button onclick="growTree()" id="growTree">Grow the World Tree (Current Stage Seed) Cost:</button>
     <p>Ascension</p>
     <button onclick="ascension()" id="ascension">Rebirth the World Tree (Current Stage normal tree) Cost:1000 of each resource</button>
-    <script src="Script1.js" charset="utf-8" type="text/javascript"></script>
+
 </body>
 </html>
